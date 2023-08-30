@@ -21,7 +21,7 @@ public class GitHubControllerAdvice {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
     }
 
-    @ExceptionHandler(GitHubUserNotFoundException.class)
+    @ExceptionHandler(HttpMediaTypeNotAcceptableException.class)
     public ResponseEntity<Map<String, Object>> handleMediaTypeNotAcceptableException(HttpMediaTypeNotAcceptableException ex){
         Map<String, Object> response = new HashMap<>();
         response.put("status", HttpStatus.NOT_ACCEPTABLE.value());
